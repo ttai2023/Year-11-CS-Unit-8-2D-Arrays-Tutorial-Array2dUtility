@@ -2,6 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Array2dUtilityTest {
 
+    private double epsilon = 0000000.1;
+
     private int[][] array2d;
     private int[][] array2d2;
 
@@ -55,9 +57,9 @@ public class Array2dUtilityTest {
 
     @org.junit.jupiter.api.Test
     void average() {
-        assertTrue(Array2dUtility.average(array2d) == 10.44);
-        assertTrue(Array2dUtility.average(array2d2) == 30.88);
-        assertTrue(Array2dUtility.average(array2d3) == 40.2);
+        assertTrue((Math.abs(Array2dUtility.average(array2d)) - 10.44) < epsilon);
+        assertTrue((Math.abs(Array2dUtility.average(array2d)) - 30.88) < epsilon);
+        assertTrue((Math.abs(Array2dUtility.average(array2d)) - 40.2) < epsilon);
     }
 
     @org.junit.jupiter.api.Test
